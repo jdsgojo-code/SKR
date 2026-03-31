@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap');
+
+@theme {
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Manrope", sans-serif;
+
+  --color-primary: #e9c349;
+  --color-on-primary: #3c2f00;
+  --color-secondary: #ebbbbb;
+  --color-surface: #1b1015;
+  --color-surface-container-lowest: #160b10;
+  --color-surface-container-low: #24181d;
+  --color-surface-container-high: #32252b;
+  --color-surface-container-highest: #3f3137;
+  --color-outline-variant: #4f4448;
+  --color-tertiary: #f7b4cd;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-secondary font-sans antialiased;
+    margin: 0;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6, .logo {
+    @apply font-serif;
+    font-family: var(--font-serif);
+    letter-spacing: 0.2em;
+  }
+
+  a, button, .utility-text, .price {
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface/70 backdrop-blur-xl;
+  }
+
+  .editorial-shadow {
+    box-shadow: 0 40px 80px -20px rgba(22, 11, 16, 0.4);
+  }
+}
+
+/* Specific Section Padding */
+div#root:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) {
+  padding-top: 83px;
+}
